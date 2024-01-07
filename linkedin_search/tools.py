@@ -1,4 +1,5 @@
 from langchain.serpapi import SerpAPIWrapper
+from langchain.tools import DuckDuckGoSearchRun
 
 
 class MySerpAPIWrapper(SerpAPIWrapper):
@@ -41,9 +42,17 @@ class MySerpAPIWrapper(SerpAPIWrapper):
         return toret
 
 
-def serpapi_search(text):
+def serpapi_link_search(text):
     """
     Searches for a linkedin profile and returns the information
     """
     search = MySerpAPIWrapper()
+    return search.run(text)
+
+
+def ddg_info_search(text):
+    """
+    Searches for a linkedin profile and returns the information
+    """
+    search = DuckDuckGoSearchRun()
     return search.run(text)
