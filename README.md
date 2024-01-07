@@ -1,2 +1,2 @@
 # langchain_agents
-Repository for playing around agents with LangChain
+Repository for playing around agents with Python and LangChain
