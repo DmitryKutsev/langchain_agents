@@ -1,12 +1,14 @@
 from langchain.serpapi import SerpAPIWrapper
 
+
 class MySerpAPIWrapper(SerpAPIWrapper):
     """
     Add-on to the langchain SerpAPIWrapper class to return the link to the profile in the results
     """
+
     def __init__(self):
         super().__init__()
-    
+
     @staticmethod
     def _process_response(res: dict) -> str:
         """Process response from SerpAPI."""
@@ -37,6 +39,7 @@ class MySerpAPIWrapper(SerpAPIWrapper):
         else:
             toret = "No good search result found"
         return toret
+
 
 def serpapi_search(text):
     """

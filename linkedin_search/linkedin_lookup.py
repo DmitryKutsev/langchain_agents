@@ -2,7 +2,6 @@ from loguru import logger
 
 from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
-from langchain.chains import LLMChain
 from langchain.agents import AgentType, Tool, initialize_agent
 
 from .tools import serpapi_search
@@ -35,8 +34,5 @@ def linkedin_lookup(persone_name: str) -> str:
     )
     prompt_template = prompt_template.format(persone_name=persone_name)
 
-
-    logger.info(
-        f"Running agent with template: {prompt_template}"
-    )
+    logger.info(f"Running agent with template: {prompt_template}")
     return agent.run(prompt_template)
