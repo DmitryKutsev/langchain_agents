@@ -17,7 +17,6 @@ def linkedin_lookup(persone_name: str) -> str:
     1. Linkedin URL.
     2. Short summary about person's career from linkedin.
     """
-
     tools_for_agent = [
         Tool(
             name="Crawl linkedin profile URL in google",
